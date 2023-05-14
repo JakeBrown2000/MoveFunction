@@ -1,0 +1,3 @@
+[submodule "moveFunction/Debug"]
+	path = moveFunction/Debug
+	url = git@github.com:JakeBrown2000/Debug.git

@@ -10,6 +10,7 @@
 		847ECEC329FDA3D600F5DA0A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 847ECEC229FDA3D600F5DA0A /* main.c */; };
 		847ECECB29FDA5DF00F5DA0A /* libcapstone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 847ECECA29FDA5DF00F5DA0A /* libcapstone.a */; };
 		847ECECD29FDA5E600F5DA0A /* libkeystone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 847ECECC29FDA5E600F5DA0A /* libkeystone.a */; };
+		84FD97092A104BE400B436F6 /* Debug.c in Sources */ = {isa = PBXBuildFile; fileRef = 84FD97082A104BE400B436F6 /* Debug.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,9 @@
 		847ECEC229FDA3D600F5DA0A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		847ECECA29FDA5DF00F5DA0A /* libcapstone.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcapstone.a; path = moveFunction/libcapstone.a; sourceTree = "<group>"; };
 		847ECECC29FDA5E600F5DA0A /* libkeystone.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkeystone.a; path = moveFunction/libkeystone.a; sourceTree = "<group>"; };
+		84FD97072A103D0500B436F6 /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		84FD97082A104BE400B436F6 /* Debug.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = Debug.c; path = moveFunction/Debug/Debug/Debug.c; sourceTree = "<group>"; };
+		84FD970A2A10EA6900B436F6 /* moveFunction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = moveFunction.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 		847ECEB629FDA3D600F5DA0A = {
 			isa = PBXGroup;
 			children = (
+				84FD97082A104BE400B436F6 /* Debug.c */,
 				847ECEC129FDA3D600F5DA0A /* moveFunction */,
 				847ECEC029FDA3D600F5DA0A /* Products */,
 				847ECEC929FDA5DF00F5DA0A /* Frameworks */,
@@ -64,7 +69,9 @@
 		847ECEC129FDA3D600F5DA0A /* moveFunction */ = {
 			isa = PBXGroup;
 			children = (
+				84FD970A2A10EA6900B436F6 /* moveFunction.entitlements */,
 				847ECEC229FDA3D600F5DA0A /* main.c */,
+				84FD97072A103D0500B436F6 /* main.h */,
 			);
 			path = moveFunction;
 			sourceTree = "<group>";
@@ -135,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84FD97092A104BE400B436F6 /* Debug.c in Sources */,
 				847ECEC329FDA3D600F5DA0A /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,26 +262,46 @@
 		847ECEC729FDA3D600F5DA0A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = moveFunction/moveFunction.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/moveFunction",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		847ECEC829FDA3D600F5DA0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = moveFunction/moveFunction.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/moveFunction",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
