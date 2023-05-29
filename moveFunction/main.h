@@ -21,12 +21,12 @@
 uint64_t convertStringToUInt(char* string);
 
 bool fixupBLInstruction(cs_insn * insn, mach_vm_address_t locationOfFunction, size_t sizeOfFunction, int64_t relativeDistanceMoved);
-bool fixupADRPInstruction(cs_insn * insn, mach_vm_address_t locationOfFunction, size_t sizeOfFunction, int64_t relativeDistanceMoved);
-
+bool fixupADRPInstruction(cs_insn * insn, mach_vm_address_t previousFunctionBeginning, mach_vm_address_t newFunctionBeginning, size_t sizeOfFunction);
+void disassembleFunction(mach_vm_address_t functionStartAddress, size_t functionSize);
 void debugCSInstruction(cs_insn * instruction);
 bool checkForCorrectPageProtections(mach_vm_address_t addressOfPage, vm_prot_t expectedProtection);
 bool fixupHexValueInString(char* operand, int64_t offset);
-bool fixupFunctionOffsets(uint64_t locationOfFunction, size_t sizeOfFunction, int64_t relativeDistanceMoved);
+bool fixupFunctionOffsets(mach_vm_address_t previousFunctionBeginning, mach_vm_address_t newFunctionBeginning, size_t sizeOfFunction);
 int addTen(int num);
 int main(int argc, const char * argv[]);
 
